@@ -14,8 +14,8 @@ def connect_db():
 
 def close_connect(cursor):
     try:
-        conn = cursor.connection
-        cursor.close
+        conn = cursor.connection()
+        cursor.close()
         conn.close()
     except mariadb.OperationalError as error:
         print('operational error', error)
